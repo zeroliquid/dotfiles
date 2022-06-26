@@ -1,0 +1,47 @@
+font:
+  normal:
+    family: Source Code Pro
+    style: Regular
+
+  bold:
+    family: Source Code Pro
+    style: Bold
+
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+
+  size: 11
+
+colors:
+  primary:
+    background: '0x1A1919'
+    foreground: '0xECD48C'
+
+  normal:
+    black: '0x674237'
+    red: '0xD6615C'
+    green: '0xB6602E'
+    yellow: '0x46180A'
+    blue: '0xA95654'
+    magenta: '0xD4EC8C'
+    cyan: '0x7F6B20'
+    white: '0xB62E40'
+
+  brigth:
+    black: '0x5C3A31'
+    red: '0xD6615C'
+    green: '0xCF7642'
+    yellow: '0x4D1A0B'
+    blue: '0xB26664'
+    magenta: '0xECF1AC'
+    cyan: '0x927A25'
+    white: '0xCF4255'
+
+
+shell:
+  program: /bin/zsh
