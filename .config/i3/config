@@ -180,6 +180,8 @@ mode "Resize" {
 bindsym $mod+r mode "Resize"
 
 bindsym $mod+o exec i3-msg open
+bindsym --release Print exec scrot ~/Screenshots/$(date +"%F_%T").png
+bindsym --release $mod+Shift+s exec scrot -s ~/Screenshots/$(date +"%F_%T").png
 
 for_window [class=".*"] border pixel 0
 gaps inner 10
