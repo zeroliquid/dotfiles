@@ -23,7 +23,7 @@ ZSH_THEME="cdimascio-lambda"
 
 # ENABLE_CORRECTION="true"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 

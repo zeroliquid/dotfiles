@@ -23,25 +23,24 @@ colors:
     foreground: '0xECD48C'
 
   normal:
-    black: '0x674237'
+    black: '0x212121'
     red: '0xD6615C'
-    green: '0xB6602E'
-    yellow: '0x46180A'
-    blue: '0xA95654'
-    magenta: '0xD4EC8C'
-    cyan: '0x7F6B20'
-    white: '0xB62E40'
-
+    green: '0x909603'
+    yellow: '0xD4EC8C'
+    blue: '0x3D19B3'
+    magenta: '0xA954A7'
+    cyan: '0x5E8586'
+    white: '0xDEDEDE'
+      
   brigth:
-    black: '0x5C3A31'
-    red: '0xD6615C'
-    green: '0xCF7642'
-    yellow: '0x4D1A0B'
-    blue: '0xB26664'
-    magenta: '0xECF1AC'
-    cyan: '0x927A25'
-    white: '0xCF4255'
-
+    black: '#000000'
+    red: '0xEE4A44'
+    green: '0x025A05'
+    yellow: '0xFAFF9B'
+    blue: '0x3C19AF'
+    magenta: '0xD5B0CF'
+    cyan: '0x7498FF'
+    white: '#FFFFFF'
 
 shell:
   program: /bin/zsh

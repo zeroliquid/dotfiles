@@ -19,29 +19,28 @@ font:
 
 colors:
   primary:
-    background: '0x^r@bg#hex^'
-    foreground: '0x^r@fg#hex^'
+    background: '0x^r@bg#hex#hex^'
+    foreground: '0x^r@fg#hex#hex^'
 
   normal:
-    black: '0x^r@DM>da(0.1)#hex^'
+    black: '0x^r@LM>wh(0.8)>ne#hex^'
     red: '0x^r@V>l(60)#hex^'
-    green: '0x^r@V>ro(20)#hex^'
-    yellow: '0x^r@DV#hex^'
-    blue: '0x^r@M#hex^'
-    magenta: '0x^r@LV>ro(30)#hex^'
-    cyan: '0x^r@V>ro(45)>da(0.3)#hex^'
-    white: '0x^r@V>ro(350)#hex^'
-
+    green: '0x^r@V>l(30)>ro(60)>sa(0.6)#hex^'
+    yellow: '0x^r@LV>ro(30)#hex^'
+    blue: '0x^r@DV>ro(240)>l(40)#hex^'
+    magenta: '0x^r@M>ro(300)#hex^'
+    cyan: '0x^r@V>ro(180)>de(0.7)#hex^'
+    white: '0x^r@LM>wh(0.8)#hex^'
+      
   brigth:
-    black: '0x^r@DM>da(0.2)#hex^'
-    red: '0x^r@V>l(60)#hex^'
-    green: '0x^r@V>ro(20)>li(0.2)#hex^'
-    yellow: '0x^r@DV>li(0.1)#hex^'
-    blue: '0x^r@M>li(0.1)#hex^'
-    magenta: '0x^r@LV>ro(20)>li(0.1)#hex^'
-    cyan: '0x^r@V>ro(45)>da(0.2)#hex^'
-    white: '0x^r@V>ro(350)>li(0.2)#hex^'
-
+    black: '#000000'
+    red: '0x^r@V>l(60)>sa(0.4)#hex^'
+    green: '0x^r@V>l(30)>ro(120)>da(0.4)>sa(0.6)#hex^'
+    yellow: '0x^r@LV>ro(20)>li(0.1)>sa#hex^'
+    blue: '0x^r@DV>ro(240)>li(1.5)#hex^'
+    magenta: '0x^r@LM>ro(300)>sa#hex^'
+    cyan: '0x^r@LV>ro(180)>sa#hex^'
+    white: '#FFFFFF'
 
 shell:
   program: /bin/zsh
