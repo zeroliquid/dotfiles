@@ -181,7 +181,10 @@ bindsym $mod+r mode "Resize"
 
 bindsym $mod+o exec i3-msg open
 bindsym --release Print exec scrot ~/Screenshots/$(date +"%F_%T").png
-bindsym --release $mod+Shift+s exec scrot -s ~/Screenshots/$(date +"%F_%T").png
+bindsym --release $mod+Shift+s exec scrot -s -f ~/Screenshots/$(date +"%F_%T").png
+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q --min-val=2 -q set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 5%+
 
 for_window [class=".*"] border pixel 0
 gaps inner 10
@@ -190,6 +193,8 @@ exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -b
 exec --no-startup-id setxkbmap "us, ru" -option 'grp:alt_shift_toggle'
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+bindsym $mod+Shift+i exec i3lock -i ~/Documents/Pictures/wh-fh-wpp.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
