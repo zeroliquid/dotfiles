@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -51,7 +52,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -sb '#b6332e'
+bindsym $mod+d exec --no-startup-id dmenu_run -sb '#b6332e' -fn 'Source Code Pro-13'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -182,6 +183,7 @@ bindsym $mod+r mode "Resize"
 bindsym $mod+o exec i3-msg open
 bindsym --release Print exec scrot ~/Screenshots/$(date +"%F_%T").png
 bindsym --release $mod+Shift+s exec scrot -s -f ~/Screenshots/$(date +"%F_%T").png
+bindsym --release $mod+$alt+p exec scrot -e 'xclip -selection clipboard -t image/png -i $f && rm $f'
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q --min-val=2 -q set 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 5%+
@@ -191,7 +193,7 @@ gaps inner 10
 
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -b
-exec --no-startup-id setxkbmap "us, ru" -option 'grp:alt_shift_toggle'
+# exec --no-startup-id setxkbmap "us, ru" -option 'grp:alt_shift_toggle'
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 bindsym $mod+Shift+i exec i3lock -i ~/Documents/Pictures/wh-fh-wpp.png
