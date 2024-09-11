@@ -9,5 +9,6 @@
   "git.addedSign.text": "+",
   "git.removedSign.text": "-",
   "diagnostic.errorSign": ">>",
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "inlayHint.display": false
 }
