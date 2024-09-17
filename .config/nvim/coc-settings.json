@@ -11,4 +11,6 @@
   "diagnostic.errorSign": ">>",
   "snippets.ultisnips.pythonPrompt": false,
   "inlayHint.display": false
+  , "Lua.workspace.checkThirdParty": false
+  , "Lua.diagnostics.globals": ["vim"]
 }
