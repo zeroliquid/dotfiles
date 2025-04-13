@@ -10,7 +10,15 @@
   "git.removedSign.text": "-",
   "diagnostic.errorSign": ">>",
   "snippets.ultisnips.pythonPrompt": false,
-  "inlayHint.display": false
+  "python.analysis.typeCheckingMode": "basic",
+  "inlayHint.display": false,
+  "emmet.includeLanguages": {"htmldjango": "html"},
   , "Lua.workspace.checkThirdParty": false
-  , "Lua.diagnostics.globals": ["vim"]
+  , "Lua.diagnostics.globals": ["vim"],
+  "languageserver": {
+    "nix": {
+      "command": "nixd",
+      "filetypes": ["nix"]
+    }
+  }
 }

@@ -35,6 +35,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id xset b off
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -191,8 +193,9 @@ bindsym $mod+r mode "Resize"
 
 bindsym $mod+o exec i3-msg open
 bindsym --release Print exec scrot ~/Screenshots/$(date +"%F_%T").png
-bindsym --release $mod+Shift+s exec scrot -s -f ~/Screenshots/$(date +"%F_%T").png
-bindsym --release $mod+$alt+p exec scrot -e 'xclip -selection clipboard -t image/png -i $f && rm $f'
+# bindsym --release $mod+Shift+s exec scrot -s -f ~/Screenshots/$(date +"%F_%T").png
+bindsym --release $mod+$alt+p exec scrot -u -e 'xclip -selection clipboard -t image/png -i $f && rm $f'
+bindsym --release $mod+Shift+s exec scrot -s -f -e 'xclip -selection clipboard -t image/png -i $f && rm $f'
 bindsym $mod+$alt+t exec polybar-msg action '#tray.module_toggle'
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q --min-val=2 -q set 5%-

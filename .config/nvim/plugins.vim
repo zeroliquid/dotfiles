@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'stevearc/oil.nvim'
   Plug 'tikhomirov/vim-glsl'
   Plug 'ncm2/ncm2'
   Plug 'roxma/nvim-yarp'
@@ -11,6 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'sindrets/diffview.nvim'
+  Plug 'ggandor/leap.nvim'
   " Themes
   "Plug 'morhetz/gruvbox'
   Plug 'ellisonleao/gruvbox.nvim'
