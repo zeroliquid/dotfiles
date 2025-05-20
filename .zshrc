@@ -43,3 +43,4 @@ ZSH_HIGHLIGHT_STYLES[comment]='none'
 
 alias dotfgit="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias firefox="flatpak run org.mozilla.firefox" 
+alias steam="flatpak run com.valvesoftware.Steam"
