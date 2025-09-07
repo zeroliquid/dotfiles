@@ -1,0 +1,78 @@
+#!/bin/bash
+#cache=~/.cache/dmenu_run
+freq=~/.dmenu_history
+aliases=~/.bash_aliases
+# dmenucmd='dmenu -i -dim .6 -h 20 -nb #002b36 -nf #586e75 -sb #073642 -sf #93a1a1'
+
+source $aliases
+
+#pull our previously run commands in
+history=$(<$freq)
+#for ones that have arguments, condense them down to an asterisk
+history=$(sed "s/[[:space:]].*/*/" <<< "$history")
+
+#generate list of commands including functions and alias'
+#tail command gets rid of a few of the weird bash builtins
+#at the beginning of the list
+cache=$(compgen -a; compgen -c | grep -vxF "$(compgen -a)" | sort | tail -n +10)
+
+# sort history by frequency of use
+sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
+filter=$(sed 's/[*;]*$//' <<< "$sorted")
+
+echo "$filter"
+# grep removes the duplicates from the unsorted list
+cache_deduped=$(grep -vxF "$filter" <<< "$cache")
+
+# run the actual dmenu and let the user choose a command
+cmd="$(echo "$sorted"$'\n'"$cache_deduped" | dmenu -i -sb '#b6332e' -fn 'Source Code Pro-13')"
+
+# To remove a file from history: 
+# Trail the selected item with ;remove
+if [[ $cmd == *";remove" ]]; then
+    cmd=${cmd/;remove/}
+    grep -vx "$cmd" $freq > temp
+    mv temp $freq
+    exit 0
+fi
+
+# expand an asterisked command to include argument history
+regex='.+[*]$'
+if [[ "$cmd" =~ $regex ]]; then
+    history=$(grep "${cmd/[*]/}" $freq)
+    sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
+    # remove trailing whitespace and asterisks from arguments
+    cmd=$(sed 's/[[:space:]*]*$//' <<< "$@")
+    dmenucmd+=' -l 17'
+    (sleep .1; xdotool key Tab) &
+    cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
+    if [[ $cmd == *";remove" ]]; then
+        cmd=${cmd/;remove/}
+        egrep -vx "$cmd" $freq > temp
+        mv temp $freq
+        exit 0
+    fi
+fi
+
+if ! [ "$cmd" == "" ]; then
+    # remember which commands have been run
+    echo "$cmd" >> $freq
+    cmdexec=$(alias | grep "${cmd/;/}=" | cut -f2 -d "'" | tr -d "'")
+    if [ -z "$cmdexec" ]; then
+        cmdexec=${cmd/;/}
+    fi
+
+    # open a command up in a terminal
+    # a second semicolon holds the xterm open
+    if [[ $cmd == *";;" ]]; then
+        cmdexec="xterm -hold -e $cmdexec"
+    elif [[ $cmd == *";" ]]; then
+        cmdexec="xterm -e $cmdexec"
+    fi
+
+    # Workaround to run functions...
+    echo "$cmdexec" | compgen -F "$cmdexec" | bash -i
+    # ...and aliases
+    echo "$cmdexec" | bash -i
+fi
+
