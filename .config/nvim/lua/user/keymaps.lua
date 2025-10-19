@@ -28,6 +28,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>l", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>n", ":noh<cr>", opts)
 keymap("n", "<leader>r", "<Plug>(coc-codeaction-cursor)", opts)
+keymap("n", "<leader><C-r>", "<Plug>(coc-codeaction-source)", opts)
 keymap("n", "<leader><S-o>", ":lua require('oil').toggle_float()<cr>", opts)
 
 -- Resize with arrows

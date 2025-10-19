@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'sindrets/diffview.nvim'
   Plug 'ggandor/leap.nvim'
+  Plug 'pearofducks/ansible-vim'
+
   " Themes
   "Plug 'morhetz/gruvbox'
   Plug 'ellisonleao/gruvbox.nvim'
