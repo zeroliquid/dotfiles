@@ -7,4 +7,5 @@ require('colorizer').setup {
 }
 require 'plugins.oil-config'
 require('trouble').setup {}
-require('leap').create_default_mappings()
+--require('leap').create_default_mappings()
+
