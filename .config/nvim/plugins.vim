@@ -12,7 +12,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'sindrets/diffview.nvim'
-  Plug 'ggandor/leap.nvim'
+  "  Plug 'ggandor/leap.nvim'
+  Plug 'https://codeberg.org/andyg/leap.nvim'
   Plug 'pearofducks/ansible-vim'
 
   " Themes
