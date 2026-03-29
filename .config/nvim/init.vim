@@ -4,3 +4,4 @@ source $HOME/.config/nvim/plug-config/coc-scroll.vim
 lua require('config')
 lua require('plugins')
 colorscheme gruvbox
+lua require('colorfix')
