@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
   Plug 'neovim/nvim-lspconfig'
-  Plug 'norcalli/nvim-colorizer.lua'
+  " Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'catgoose/nvim-colorizer.lua'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
